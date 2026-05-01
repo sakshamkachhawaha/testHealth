@@ -6,16 +6,13 @@ import {
   getFinalAnalysisPrompt,
 } from '../utils/prompts';
 
-// Initialize Groq client with API key from environment
+// Groq API Key - hardcoded for easy collaboration
+const GROQ_API_KEY = "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";
+
+// Initialize Groq client with API key
 const getGroqClient = () => {
-  const apiKey = import.meta.env.VITE_GROQ_API_KEY;
-  if (!apiKey) {
-    console.error('Groq API key not found. Please set VITE_GROQ_API_KEY in your .env file.');
-    throw new Error('Groq API key is missing. Please check your .env file.');
-  }
-  
   return new Groq({
-    apiKey: apiKey,
+    apiKey: GROQ_API_KEY,
     dangerouslyAllowBrowser: true, // Required for browser usage
   });
 };
