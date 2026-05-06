@@ -1,5 +1,4 @@
-import { Outlet, NavLink, useLocation } from 'react-router-dom';
-import { useApp } from '../context/AppContext';
+import { Outlet, NavLink } from 'react-router-dom';
 import './Layout.css';
 
 const NAV_ITEMS = [
@@ -10,9 +9,6 @@ const NAV_ITEMS = [
 ];
 
 export default function Layout() {
-  const { darkMode } = useApp();
-  const location = useLocation();
-
   return (
     <div className="layout">
       {/* Desktop Sidebar */}

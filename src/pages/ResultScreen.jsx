@@ -16,7 +16,7 @@ export default function ResultScreen() {
     </div>
   );
 
-  const { score, level, possibleCauses, preventive, nextSteps, shouldSeeDoctor, primarySymptom } = report;
+  const { score, level, possibleCauses, preventive, nextSteps, shouldSeeDoctor } = report;
   const color = level === 'high' ? 'var(--error)' : level === 'medium' ? 'var(--warning)' : 'var(--primary)';
   const bgColor = level === 'high' ? 'var(--error-container)' : level === 'medium' ? 'var(--warning-container)' : 'var(--primary-fixed)';
 

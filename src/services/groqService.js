@@ -114,7 +114,7 @@ export const generateFinalAnalysis = async (conversation) => {
     } catch (parseError) {
       console.error('Error parsing JSON response:', parseError);
       console.error('Raw response:', analysisText);
-      throw new Error('Failed to parse AI analysis. Please try again.');
+      throw new Error('Failed to parse AI analysis. Please try again.', { cause: parseError });
     }
   } catch (error) {
     console.error('Error generating final analysis:', error);

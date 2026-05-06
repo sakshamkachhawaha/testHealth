@@ -8,7 +8,6 @@ import {
   Clock, 
   RefreshCw,
   Copy,
-  Download,
   AlertCircle,
   ChevronDown,
   ChevronUp

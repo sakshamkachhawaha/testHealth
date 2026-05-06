@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* ===== ZenHealth Design System (from Stitch) ===== */
 :root {
   /* Primary */
@@ -19,6 +21,7 @@
   --tertiary: #596156;
   --tertiary-container: #9ba397;
   --tertiary-fixed: #dde5d8;
+  --on-tertiary-fixed: #41493f;
 
   /* Surfaces */
   --surface: #f9faf6;
@@ -98,6 +101,8 @@
   --on-secondary-container: #c1ebdf;
   --tertiary: #c1c9bc;
   --tertiary-container: #41493f;
+  --tertiary-fixed: #41493f;
+  --on-tertiary-fixed: #c1c9bc;
   --error: #ffb4ab;
   --error-container: #93000a;
   --on-error: #690005;

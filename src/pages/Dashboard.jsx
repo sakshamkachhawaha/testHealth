@@ -30,7 +30,7 @@ function ScoreBadge({ score, level }) {
 }
 
 export default function Dashboard() {
-  const { reports, user } = useApp();
+  const { reports } = useApp();
   const navigate = useNavigate();
   const lastReport = reports[0];
 
