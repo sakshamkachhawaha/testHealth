@@ -1,0 +1,204 @@
+/* ===== ZenHealth Design System (from Stitch) ===== */
+:root {
+  /* Primary */
+  --primary: #43664d;
+  --primary-container: #84a98c;
+  --on-primary: #ffffff;
+  --on-primary-container: #1c3e27;
+  --primary-fixed: #c5eccc;
+  --primary-fixed-dim: #aad0b1;
+  --inverse-primary: #aad0b1;
+
+  /* Secondary */
+  --secondary: #3f665c;
+  --secondary-container: #bee8dc;
+  --on-secondary: #ffffff;
+  --on-secondary-container: #436a60;
+
+  /* Tertiary */
+  --tertiary: #596156;
+  --tertiary-container: #9ba397;
+  --tertiary-fixed: #dde5d8;
+
+  /* Surfaces */
+  --surface: #f9faf6;
+  --surface-dim: #d9dad7;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f3f4f0;
+  --surface-container: #edeeea;
+  --surface-container-high: #e7e9e5;
+  --surface-container-highest: #e2e3df;
+  --surface-variant: #e2e3df;
+  --on-surface: #1a1c1a;
+  --on-surface-variant: #424842;
+  --inverse-surface: #2e312f;
+  --inverse-on-surface: #f0f1ed;
+
+  /* Outline */
+  --outline: #727972;
+  --outline-variant: #c2c8c0;
+
+  /* Error */
+  --error: #ba1a1a;
+  --error-container: #ffdad6;
+  --on-error: #ffffff;
+
+  /* Spacing */
+  --unit: 8px;
+  --stack-sm: 12px;
+  --stack-md: 24px;
+  --stack-lg: 48px;
+  --gutter: 16px;
+  --margin-page: 32px;
+
+  /* Radii */
+  --radius-sm: 0.5rem;
+  --radius: 1rem;
+  --radius-md: 1.5rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(67, 102, 77, 0.06);
+  --shadow-md: 0 4px 20px rgba(67, 102, 77, 0.08);
+  --shadow-lg: 0 8px 40px rgba(67, 102, 77, 0.1);
+
+  /* Warning */
+  --warning: #e8a317;
+  --warning-container: #fff3d0;
+}
+
+/* Dark mode */
+.dark {
+  --primary: #aad0b1;
+  --primary-container: #2c4e36;
+  --on-primary: #1c3e27;
+  --on-primary-container: #c5eccc;
+  --primary-fixed: #2c4e36;
+  --primary-fixed-dim: #3a6345;
+  --inverse-primary: #43664d;
+  --surface: #1a1c1a;
+  --surface-dim: #1a1c1a;
+  --surface-container-lowest: #111311;
+  --surface-container-low: #1e201e;
+  --surface-container: #222422;
+  --surface-container-high: #2c2e2c;
+  --surface-container-highest: #373937;
+  --surface-variant: #424842;
+  --on-surface: #e2e3df;
+  --on-surface-variant: #c2c8c0;
+  --inverse-surface: #e2e3df;
+  --inverse-on-surface: #2e312f;
+  --outline: #8c938c;
+  --outline-variant: #424842;
+  --secondary: #a6cfc3;
+  --secondary-container: #274e45;
+  --on-secondary: #00201a;
+  --on-secondary-container: #c1ebdf;
+  --tertiary: #c1c9bc;
+  --tertiary-container: #41493f;
+  --error: #ffb4ab;
+  --error-container: #93000a;
+  --on-error: #690005;
+  --on-error-container: #ffdad6;
+  --warning: #f0c050;
+  --warning-container: #5a3f00;
+
+  /* Shadow overrides for dark */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background: var(--surface);
+  color: var(--on-surface);
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Newsreader', serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: inherit; }
+input, select, textarea { font-family: inherit; }
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: var(--radius-full);
+}
+
+/* ===== Utility Classes ===== */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+}
+@keyframes blob-morph {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+@keyframes progress-fill {
+  from { width: 0%; }
+}
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in { animation: fadeIn 0.5s ease-out both; }
+.animate-fade-in-up { animation: fadeInUp 0.6s ease-out both; }
+.animate-scale-in { animation: scaleIn 0.4s ease-out both; }
+.animate-slide-right { animation: slideInRight 0.5s ease-out both; }
+
+/* Stagger delays */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }

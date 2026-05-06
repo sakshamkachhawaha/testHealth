@@ -1,0 +1,94 @@
+.result-screen { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--stack-md); }
+
+.result-hero {
+  border-radius: var(--radius-lg); padding: var(--stack-lg);
+  display: flex; align-items: center; gap: var(--stack-lg); flex-wrap: wrap;
+}
+.score-circle {
+  width: 140px; height: 140px; border-radius: var(--radius-full);
+  border: 6px solid; display: flex; align-items: baseline;
+  justify-content: center; background: var(--surface-container-lowest);
+  flex-shrink: 0;
+}
+.score-number { font-family: 'Newsreader', serif; font-size: 56px; font-weight: 500; }
+.score-percent { font-size: 24px; margin-left: 2px; }
+.result-status { flex: 1; min-width: 200px; }
+.status-label { font-weight: 700; display: block; margin-bottom: var(--unit); }
+.result-summary { font-size: 16px; color: var(--on-surface-variant); line-height: 1.6; }
+.dark .result-hero { background: var(--surface-container-high) !important; }
+.dark .score-circle { background: var(--surface-container-lowest); }
+
+.doctor-alert {
+  background: var(--error-container); border-radius: var(--radius-md);
+  padding: var(--stack-md); display: flex; align-items: center; gap: var(--gutter); flex-wrap: wrap;
+}
+.doctor-alert .material-symbols-outlined { font-size: 32px; color: var(--error); }
+.doctor-alert h3 { font-family: 'Newsreader', serif; font-size: 18px; color: var(--on-error-container); }
+.doctor-alert p { font-size: 13px; color: var(--on-error-container); opacity: 0.8; }
+.doctor-alert .btn-primary { margin-left: auto; background: var(--error); }
+
+.insights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--gutter); }
+.insight-card {
+  background: var(--surface-container-low); border-radius: var(--radius-md);
+  padding: var(--stack-md); transition: all 0.25s; border: 1px solid transparent;
+}
+.insight-card:hover { border-color: var(--outline-variant); box-shadow: var(--shadow-sm); }
+.insight-header { display: flex; align-items: center; gap: var(--unit); margin-bottom: var(--gutter); }
+.insight-header h3 { font-family: 'Newsreader', serif; font-size: 18px; }
+.insight-list { list-style: none; display: flex; flex-direction: column; gap: var(--unit); }
+.insight-list li { display: flex; align-items: flex-start; gap: var(--unit); font-size: 14px; color: var(--on-surface-variant); line-height: 1.5; }
+.li-icon { font-size: 18px; color: var(--primary); flex-shrink: 0; margin-top: 1px; }
+.insight-disclaimer { font-size: 11px; color: var(--outline); margin-top: var(--gutter); font-style: italic; }
+
+.result-actions { display: flex; gap: var(--stack-sm); justify-content: center; margin-top: var(--stack-md); flex-wrap: wrap; }
+
+.not-found {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 50vh; gap: var(--gutter); color: var(--on-surface-variant);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .result-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 20px;
+    border-radius: var(--radius-md);
+    gap: var(--gutter);
+  }
+  .score-circle { width: 110px; height: 110px; border-width: 5px; }
+  .score-number { font-size: 44px; }
+  .score-percent { font-size: 20px; }
+  .result-status { min-width: unset; }
+  .result-summary { font-size: 14px; }
+
+  .doctor-alert {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    border-radius: var(--radius);
+    gap: 12px;
+  }
+  .doctor-alert .material-symbols-outlined { font-size: 28px; }
+  .doctor-alert .btn-primary { margin-left: 0; width: 100%; justify-content: center; }
+
+  .insights-grid { grid-template-columns: 1fr; gap: 10px; }
+  .insight-card {
+    padding: 16px;
+    border-radius: var(--radius);
+  }
+  .insight-header h3 { font-size: 16px; }
+  .insight-list li { font-size: 13px; }
+
+  .result-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .result-actions .btn-primary,
+  .result-actions .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+}

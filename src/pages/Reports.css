@@ -1,0 +1,104 @@
+.reports-page { display: flex; flex-direction: column; gap: var(--stack-md); }
+.page-header {
+  display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--gutter);
+}
+.page-header h1 { font-size: 32px; }
+.page-subtitle { font-size: 15px; color: var(--on-surface-variant); margin-top: 4px; }
+
+.reports-grid { display: flex; flex-direction: column; gap: var(--gutter); }
+.report-item {
+  background: var(--surface-container-low); border-radius: var(--radius-md);
+  overflow: hidden; border: 1px solid transparent; transition: all 0.25s;
+}
+.report-item:hover { border-color: var(--outline-variant); box-shadow: var(--shadow-sm); }
+.report-item-top {
+  display: flex; align-items: center; gap: var(--gutter); padding: var(--stack-md);
+  cursor: pointer;
+}
+.report-item-score {
+  width: 56px; height: 56px; border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 700; flex-shrink: 0;
+}
+.report-item-info { flex: 1; }
+.report-item-info h3 { font-family: 'Newsreader', serif; font-size: 18px; }
+.report-item-info p { font-size: 13px; color: var(--on-surface-variant); margin-top: 2px; }
+.report-item-bottom {
+  padding: 0 var(--stack-md) var(--gutter); display: flex; justify-content: space-between; align-items: flex-end;
+}
+.report-item-summary { font-size: 13px; color: var(--on-surface-variant); line-height: 1.5; max-width: 70%; }
+.report-item-actions { display: flex; gap: var(--unit); }
+.icon-btn {
+  width: 36px; height: 36px; border-radius: var(--radius-full);
+  background: var(--surface-container); border: none;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--on-surface-variant); transition: all 0.2s;
+}
+.icon-btn:hover { background: var(--surface-container-high); color: var(--on-surface); }
+.icon-btn.danger:hover { background: var(--error-container); color: var(--error); }
+.icon-btn .material-symbols-outlined { font-size: 18px; }
+
+.level-pill {
+  padding: 4px 12px; border-radius: var(--radius-full); font-size: 12px;
+  font-weight: 600; text-transform: capitalize; flex-shrink: 0;
+}
+.level-low { background: var(--primary-fixed); color: var(--on-primary-container); }
+.level-medium { background: var(--warning-container); color: var(--warning); }
+.level-high { background: var(--error-container); color: var(--error); }
+.dark .level-low { background: rgba(170, 208, 177, 0.15); color: var(--primary); }
+.dark .level-medium { background: rgba(240, 192, 80, 0.15); color: var(--warning); }
+.dark .level-high { background: rgba(255, 180, 171, 0.15); color: var(--error); }
+
+.empty-state {
+  text-align: center; color: var(--on-surface-variant);
+  background: var(--surface-container-low); border-radius: var(--radius-lg);
+  display: flex; flex-direction: column; align-items: center; gap: var(--gutter);
+  padding: 80px 40px;
+}
+.empty-state h3 { font-family: 'Newsreader', serif; font-size: 22px; color: var(--on-surface); }
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .page-header h1 { font-size: 26px; }
+  .page-subtitle { font-size: 13px; }
+  .page-header .btn-primary {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+  }
+
+  .reports-grid { gap: 10px; }
+  .report-item { border-radius: var(--radius); }
+  .report-item-top { padding: 14px; gap: 12px; }
+  .report-item-score {
+    width: 44px; height: 44px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+  }
+  .report-item-info h3 { font-size: 15px; }
+  .report-item-info p { font-size: 12px; }
+  .report-item-bottom {
+    padding: 0 14px 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .report-item-summary { max-width: 100%; font-size: 12px; }
+  .report-item-actions { justify-content: flex-end; }
+  .level-pill { font-size: 11px; padding: 3px 10px; }
+
+  .empty-state {
+    padding: 48px 24px;
+    border-radius: var(--radius);
+  }
+  .empty-state h3 { font-size: 20px; }
+  .empty-state .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}

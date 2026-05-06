@@ -1,0 +1,106 @@
+.report-detail { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--stack-md); }
+.detail-header { display: flex; align-items: center; gap: var(--gutter); }
+.detail-header h1 { flex: 1; font-size: 28px; }
+.detail-actions-top { display: flex; gap: var(--unit); }
+
+.detail-summary {
+  background: var(--surface-container-low); border-radius: var(--radius-lg); padding: var(--stack-md);
+}
+.detail-score-wrap { display: flex; align-items: center; gap: var(--stack-md); }
+.detail-score {
+  width: 80px; height: 80px; border-radius: var(--radius-full);
+  border: 4px solid; display: flex; align-items: center; justify-content: center;
+  font-family: 'Newsreader', serif; font-size: 28px; font-weight: 500;
+  background: var(--surface-container-lowest); flex-shrink: 0;
+}
+.detail-date { font-size: 14px; color: var(--on-surface-variant); margin-top: 8px; }
+.detail-symptom { font-size: 14px; color: var(--on-surface-variant); margin-top: 2px; }
+
+.detail-section {
+  background: var(--surface-container-low); border-radius: var(--radius-md); padding: var(--stack-md);
+}
+.detail-section h2 {
+  font-size: 20px; display: flex; align-items: center; gap: var(--unit);
+  margin-bottom: var(--gutter); color: var(--on-surface);
+}
+.detail-section h2 .material-symbols-outlined { font-size: 22px; color: var(--primary); }
+
+.answers-list { display: flex; flex-direction: column; gap: 1px; }
+.answer-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0; border-bottom: 1px solid var(--surface-container);
+  gap: var(--gutter);
+}
+.answer-row:last-child { border-bottom: none; }
+.answer-q { font-size: 14px; color: var(--on-surface-variant); flex: 1; }
+.answer-a {
+  font-size: 14px; font-weight: 600; color: var(--on-surface);
+  background: var(--surface-container); padding: 4px 12px;
+  border-radius: var(--radius-full); flex-shrink: 0;
+}
+
+.insights-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--gutter); }
+.insight-block h4 { font-family: 'Newsreader', serif; font-size: 16px; margin-bottom: var(--unit); color: var(--on-surface); }
+.insight-block ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.insight-block li {
+  font-size: 14px; color: var(--on-surface-variant); line-height: 1.5;
+  padding-left: 16px; position: relative;
+}
+.insight-block li::before {
+  content: ''; position: absolute; left: 0; top: 8px;
+  width: 6px; height: 6px; background: var(--primary-container);
+  border-radius: var(--radius-full);
+}
+
+.detail-doctor-cta {
+  background: var(--error-container); border-radius: var(--radius-md); padding: var(--stack-md);
+  display: flex; align-items: center; gap: var(--gutter); flex-wrap: wrap;
+}
+.detail-doctor-cta .material-symbols-outlined { font-size: 28px; color: var(--error); }
+.detail-doctor-cta p { flex: 1; font-size: 14px; color: var(--on-error-container); min-width: 200px; }
+.detail-doctor-cta .btn-primary { background: var(--error); }
+
+.not-found {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 50vh; gap: var(--gutter); color: var(--on-surface-variant);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .detail-header h1 { font-size: 22px; }
+  .detail-header { gap: 10px; }
+
+  .detail-summary {
+    padding: 16px;
+    border-radius: var(--radius);
+  }
+  .detail-score-wrap {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--gutter);
+  }
+  .detail-score { width: 72px; height: 72px; font-size: 24px; border-width: 3px; }
+
+  .detail-section {
+    padding: 16px;
+    border-radius: var(--radius);
+  }
+  .detail-section h2 { font-size: 18px; }
+
+  .answer-row { flex-direction: column; align-items: flex-start; gap: 6px; padding: 10px 0; }
+  .answer-q { font-size: 13px; }
+  .answer-a { font-size: 13px; padding: 3px 10px; }
+
+  .insights-cols { grid-template-columns: 1fr; }
+  .insight-block li { font-size: 13px; }
+
+  .detail-doctor-cta {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    border-radius: var(--radius);
+    gap: 12px;
+  }
+  .detail-doctor-cta p { min-width: unset; }
+  .detail-doctor-cta .btn-primary { width: 100%; justify-content: center; }
+}
